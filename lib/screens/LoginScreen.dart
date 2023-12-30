@@ -1,4 +1,5 @@
 import 'package:auth/screens/HomePage.dart';
+import 'package:auth/screens/SignUpScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -122,7 +123,23 @@ class _LoginScreenState extends State<LoginScreen> {
                     }
                   }, 
                   child: Text('Je me connecte')
-                )
+                ),
+                SizedBox(height: 30,),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text("Vous n'avez pas de compte ?"),
+                      MaterialButton(
+                        onPressed: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) =>  SignUpScreen()));
+                        },
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(100)), 
+                        child: 
+                          Text("Créer maintenant!", style: TextStyle(color: Colors.blueAccent),
+                          ),
+                        ), 
+                    ],
+                  ),
               ],
             ),
           ),

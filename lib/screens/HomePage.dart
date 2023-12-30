@@ -1,4 +1,5 @@
 import 'package:auth/screens/LoginScreen.dart';
+import 'package:auth/utils/Fonction.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -15,6 +16,8 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     String? _email = _auth.currentUser!.email;
+    User? user =  _auth.currentUser;
+    String nomPrenom = user?.displayName ?? '';
 
     return Scaffold(
       appBar: AppBar(
@@ -27,7 +30,8 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("Vous êtes connecté avec : $_email"),
+              Text("Bienvenue M/Mlle $nomPrenom"),
+              Text("M. Vous êtes connecté avec : $_email"),
               ElevatedButton(
                   onPressed: (){
                     _auth.signOut();
