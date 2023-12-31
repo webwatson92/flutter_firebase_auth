@@ -19,6 +19,12 @@
               android:name="io.flutter.embedding.android.NormalTheme"
               android:resource="@style/NormalTheme"
               />
+              <!-- Ajouter pour la notification -->
+            <!-- <meta-data
+              android:name="com.google.firebase.messaging.default_notification"
+              android:resource="high_importance_channel"
+              /> -->
+              <!-- Fin d'ajout pour la notification -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
